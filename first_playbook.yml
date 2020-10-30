@@ -1,0 +1,28 @@
+---
+
+- name: Playbook for simple start
+  connection: ansible.netcommon.network_cli
+  hosts: all
+  tasks:
+    # - name: Get config for IOS devices
+    #   cisco.ios.ios_facts:
+        
+    # - name: What is the IOS OS ver?
+    #   debug:
+    #     var: ansible_net_version
+
+    # - name: What is the hostname?
+    #   debug:
+    #     var: ansible_net_hostname
+
+    - name: Run cli_command on Cisco IOS and display results
+      block:
+      - name: Run cli_command on Cisco IOS
+        ansible.netcommon.cli_command:
+          command: show int desc
+        register: result
+  
+      - name: Display result to terminal window
+        debug:
+          var: result.stdout_lines
+      when: ansible_network_os == 'cisco.ios.ios'
