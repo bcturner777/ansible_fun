@@ -1,0 +1,16 @@
+---
+# ansible-playbook testing
+
+- name: run tasks on all hosts
+  hosts: "*"
+#  tasks:
+#    - debug: var=ansible_host
+
+  tasks:
+    - name: gather tasks and disply some output
+      cisco.ios.ios_facts:
+        gather_subset: all
+
+    - name: Disply the config
+      debug:
+        msg: "The hostname is {{ ansible_net_hostname }} and the OS is {{ ansible_net_version }}"

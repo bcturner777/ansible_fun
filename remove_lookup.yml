@@ -1,0 +1,22 @@
+---
+# ansible-playbook for ios system config change to remove DNS lookups
+
+- name: run tasks on all hosts
+  hosts: "*"
+  
+  tasks:
+  - name: Remove DNS Lookup
+    ios_system:
+      lookup_enabled: no
+      state: present
+  
+  - name: Add Banner Login and keep it
+    ios_banner:
+      banner: login
+      text: |
+        ****************************************
+        * This is a test router for learning   *
+        * cool stuff about managing network    *
+        * devices using Ansible.               *
+        ****************************************
+
