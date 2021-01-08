@@ -1,0 +1,22 @@
+---
+# ansible-playbook for config change
+
+- name: run tasks on all hosts
+  hosts: routers
+  
+  tasks:
+  - name: Add Login Banner
+    ios_banner:
+      banner: login
+      text: |
+        Hello people, welcome to the big show!
+        Please proceed with care.
+      state: present
+  - name: Remove all other Banners
+    ios_banner:
+      banner: motd
+      state: absent   
+      banner: exec
+      state: absent
+      banner: incoming
+      state: absent

@@ -3,7 +3,7 @@
 # https://docs.ansible.com/ansible/latest/collections/cisco/ios/ios_ping_module.html#ansible-collections-cisco-ios-ios-ping-module
 
 - name: run tasks on all hosts
-  hosts: "*"
+  hosts: routers
   
   tasks:
   - name: Test ping to 8.8.8.8
