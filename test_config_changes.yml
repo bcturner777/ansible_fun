@@ -2,7 +2,7 @@
 # ansible-playbook for ios system config change to remove DNS lookups
 
 - name: run tasks on all hosts
-  hosts: "*"
+  hosts: iosxe_routers
   
   tasks:
   - name: Remove DNS Lookup

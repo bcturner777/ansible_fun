@@ -3,17 +3,17 @@
 # https://docs.ansible.com/ansible/latest/collections/cisco/ios/ios_ping_module.html#ansible-collections-cisco-ios-ios-ping-module
 
 - name: run tasks on all hosts
-  hosts: routers
+  hosts: iosxe_routers
   
   tasks:
-  - name: Test ping to 8.8.8.8
+  - name: Test ping to DevBox in Sandbox
     cisco.ios.ios_ping:
-      dest: 8.8.8.8
-      vrf: mgmt
+      dest: 10.10.20.50
+      vrf: Mgmt-intf
       count: 5
     # registers are used when capturing the output of a task to a variable
     register: results
 
-  - name: Print return values
+  - name: Print return RTT values
     debug:
       var: results.rtt

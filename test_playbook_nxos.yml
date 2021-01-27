@@ -2,13 +2,13 @@
 # ansible-playbook testing
 
 - name: run tasks on all hosts
-  hosts: iosxe_routers
+  hosts: nxos_switches
 #  tasks:
 #    - debug: var=ansible_host
 
   tasks:
     - name: gather tasks and display some output
-      cisco.ios.ios_facts:
+      nxos_facts:
         gather_subset: all
       register: result
 
