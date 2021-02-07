@@ -5,6 +5,11 @@
 
 ### ansible ###
 .ansible_env
+# ansible specific files
+inventory/*.yml
+inventory/*.ini
+group_vars/*.yml
+group_vars/*.ini
 
 ### macOS ###
 # General

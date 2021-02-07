@@ -17,9 +17,9 @@
       state: present
   - name: Remove all other Banners
     ios_banner:
-      banner: motd
-      state: absent   
-#      banner: exec
-#      state: absent
-      banner: incoming
+#      banner: motd
+#      state: absent   
+      banner: exec
       state: absent
+#      banner: incoming
+#      state: absent

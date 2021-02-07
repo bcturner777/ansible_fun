@@ -1,0 +1,25 @@
+
+# ansible-playbook to test configuration backup process
+# https://docs.ansible.com/ansible/latest/collections/cisco/ios/ios_config_module.html
+
+# - name: run tasks on routers
+#   hosts: iosxe_routers
+#   gather_facts: False
+
+#   tasks:
+#   - name: Save backup config to file
+#     ios_config: 
+#       backup: yes
+#       backup_options:
+#         dir_path: /Users/bturner/dev/ansible_chi_lab/config_backup/routers
+
+- name: run tasks on switches
+  hosts: ios_switches
+  gather_facts: False
+
+  tasks:
+  - name: Save backup config to file
+    ios_config: 
+      backup: yes
+      backup_options:
+        dir_path: /Users/bturner/dev/ansible_chi_lab/config_backup/switches
