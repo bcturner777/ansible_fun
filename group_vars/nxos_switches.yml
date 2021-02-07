@@ -7,4 +7,3 @@ ansible_network_os: nxos
 #ansible_become: yes
 #ansible_become_method: enable
 #ansible_become_password: cisco
-#ansible_python_interpreter: /user/bin/python3
