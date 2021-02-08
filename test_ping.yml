@@ -9,7 +9,7 @@
   - name: Test ping to DevBox in Sandbox
     cisco.ios.ios_ping:
       dest: 10.10.20.50
-      vrf: Mgmt-intf
+      vrf: mgmt
       count: 5
     # registers are used when capturing the output of a task to a variable
     register: results
